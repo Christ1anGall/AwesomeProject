@@ -1,0 +1,14 @@
+{
+	"Componente Funcional": {
+		"scope": "javascript,typescript",
+		"prefix": "comfunc",
+		"body": [
+			"import React, { useState } from 'react'",
+			"import { Text, Button, StyleSheet, View } from 'react-native'",
+			"",
+			"",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+}
