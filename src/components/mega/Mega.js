@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Text, TextInput } from 'react-native';
+import { Button, Text, TextInput, View } from 'react-native';
 import styles from '../styles';
+import MegaNumero from './Numero';
 
 export default class Mega extends Component {
   state = {
@@ -13,7 +14,7 @@ export default class Mega extends Component {
   };
 
   gerarNumeroNContido = (nums) => {
-    const novo = parseInt(Math.random() * 60) + 1;
+    const novo = parseInt(Math.random() * 160) + 1;
     return nums.includes(novo) ? this.gerarNumeroNContido(nums) : novo;
   };
 
@@ -23,6 +24,13 @@ export default class Mega extends Component {
       .reduce((n) => [...n, this.gerarNumeroNContido(n)], [])
       .sort((a, b) => a - b);
     this.setState({ numeros });
+  };
+
+  exibirNumeros = () => {
+    const num = this.state.numeros;
+    return num.map((n) => {
+      return <MegaNumero numeros={n} />;
+    });
   };
 
   render() {
@@ -38,8 +46,10 @@ export default class Mega extends Component {
           value={this.state.qtNumeros}
           onChangeText={this.alterarQtNumeros}
         />
+
         <Button title="gerar" onPress={this.gerarNumeros} />
-        <Text>{this.state.numeros.join(',')}</Text>
+
+        <Text>{this.exibirNumeros()}</Text>
       </>
     );
   }
