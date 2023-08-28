@@ -1,20 +1,19 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import MinMAx from './components/MinMax';
-import Titulo from './components/Titulo';
-import Contador from './components/Contador';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
+import Mega from './components/mega/Mega';
 
 export default () => (
-  <View style={styles.container}>
-    <Contador inicial={10} />
-  </View>
+  <SafeAreaView style={styles.container}>
+    <Mega qtNumeros={7} />
+  </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     height: '100%',
     alignItems: 'center',
+    padding: 20,
   },
 });

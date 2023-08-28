@@ -9,7 +9,7 @@ export default StyleSheet.create({
   large: {
     fontSize: 32,
     textAlign: 'center',
-    color: 'red',
+    color: 'black',
   },
   normal: {
     fontSize: 22,
